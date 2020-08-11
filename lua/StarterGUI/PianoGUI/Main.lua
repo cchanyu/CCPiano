@@ -34,12 +34,9 @@ function start()
 		ONN = true
 		wait(.03)
 		if #NNN > 18 then
-			print(player.Name.." has just been killed due to possibilities of hacking")
-			local char = player.Character
-			local hum = char:FindFirstChildOfClass("Humanoid")
-			hum.Health = -1
+			print(player.Name.." is playing 18 note chord (or greater)")
 		elseif #NNN > 12 then
-			print('You have played a 12 note chord (or greater)')
+			print(player.Name.." is playing 12 note chord (or greater)")
 		end
 		NNN = {}
 		ONN = false
