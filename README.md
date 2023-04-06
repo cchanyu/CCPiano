@@ -1,18 +1,21 @@
-### Project: Piano Room
-### Program Name: Piano related scripts and parts
+### Project: Piano MIDI to Keyboard Autoplay
+### Original creator: https://github.com/Stereo101/python-MidiToVirtualPianoMacro
 
 ### Description: 
 ``` 
-Game Link: https://www.roblox.com/games/5527931344/
-Interactive virtual live piano coded in lua.
-Users can perform and listen to the performance.
-This piano is following standard MIDI keyboard format.
+The script is written by Stereo101, but I modified it in the way user's will input their file name.
+and also pull from any unique file, not constrainted to "song.txt".
 
-Transpose = pitch
-SoundFont = type of instrument
-Caps = capslock boolean
-Exit = quits piano
-Keys = plays a sound
+How to use without an .exe: 
+Open the command prompt and cd into the folder that the script is in.
+type "python [name of the python file].py" to execute the script
+
+the instruction is displayed on the command prompt:
+Press DELETE to play/pause
+Press HOME to rewind
+Press END to advance
+Press Ctrl+C or close window to exit
+
+If you get an error saying missing modules:
+"pip install [library name]" to install that library
 ```
-
-### Preview:

@@ -1,6 +1,3 @@
-# to build, use "cd (playsong directory)"
-# pyinstaller --onefile playSong.py
-
 import keyboard
 import threading
 
@@ -54,9 +51,9 @@ def releaseLetter(strLetter):
 		keyboard.release(strLetter)
 	return
 	
-def processFile():
+def processFile(filename):
 	global playback_speed
-	with open("song.txt","r") as macro_file:
+	with open(filename,"r") as macro_file:
 		lines = macro_file.read().split("\n")
 		tOffsetSet = False
 		tOffset = 0
@@ -170,7 +167,8 @@ def main():
 	global isPlaying
 	global infoTuple
 	global playback_speed
-	infoTuple = processFile()
+	filename = input("Enter the name of text file you want to play (include .txt at the end): ")
+	infoTuple = processFile(filename)
 	infoTuple[2] = parseInfo()
 	keyboard.on_press_key("delete", onDelPress)
 	keyboard.on_press_key("home", rewind)

@@ -47,7 +47,8 @@ class MidiFile:
 	tempo = 0
 	
 	midiRecord = open("midiRecord.txt","w")
-	midiSong = open("song.txt","w")
+	filename = input("Enter the name of that you want to save it as (include .txt at the end): ")
+	midiSong = open(filename,"w")
 	midiSheet = open("sheetConversion.txt","w")
 	
 	virtualPianoScale = "1!2@34$5%6^78*9(0qQwWeErtTyYuiIoOpPasSdDfgGhHjJklLzZxcCvVbBnm"
@@ -291,6 +292,7 @@ class MidiFile:
 			return up
 		else:
 			return down
+		
 def main():
 	fileList = os.listdir()
 	midList = []
