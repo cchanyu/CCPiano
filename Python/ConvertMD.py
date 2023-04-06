@@ -47,8 +47,8 @@ class MidiFile:
 	tempo = 0
 	
 	midiRecord = open("midiRecord.txt","w")
-	filename = input("Enter the name of that you want to save it as (include .txt at the end): ")
-	midiSong = open(filename,"w")
+	filename = input("Enter the name you want to save it as: ")
+	midiSong = open(filename + ".txt", "w")
 	midiSheet = open("sheetConversion.txt","w")
 	
 	virtualPianoScale = "1!2@34$5%6^78*9(0qQwWeErtTyYuiIoOpPasSdDfgGhHjJklLzZxcCvVbBnm"

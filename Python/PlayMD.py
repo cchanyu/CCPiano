@@ -167,8 +167,8 @@ def main():
 	global isPlaying
 	global infoTuple
 	global playback_speed
-	filename = input("Enter the name of text file you want to play (include .txt at the end): ")
-	infoTuple = processFile(filename)
+	filename = input("Enter the name of text file you want to play: ")
+	infoTuple = processFile(filename + ".txt")
 	infoTuple[2] = parseInfo()
 	keyboard.on_press_key("delete", onDelPress)
 	keyboard.on_press_key("home", rewind)
