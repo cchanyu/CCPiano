@@ -1,2 +1,7 @@
 *.mid
 *.txt
+
+# Except these specific files
+!midiRecord.txt
+!sheetConversion.txt
+!song.txt
