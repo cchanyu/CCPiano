@@ -1,9 +1,13 @@
 ### Project: Piano MIDI to Keyboard Autoplay
-### Original creator: https://github.com/Stereo101/python-MidiToVirtualPianoMacro
+### Creator: https://github.com/Stereo101/python-MidiToVirtualPianoMacro
 
 ### Description: 
 ``` 
-The script is written by Stereo101, but I modified it in the way user's will input their file name.
+You'll need to create a folder named MIDI and TEXT at the root.
+MIDI - .mid files should be stored here
+TEXT - converted text files will be saved here
+
+I modified the script in the way user's will input their file name.
 and also pull from any unique file, not constrainted to "song.txt".
 
 How to use without an .exe: 

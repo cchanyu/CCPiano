@@ -1,7 +1,13 @@
+# MIDI/
+# TEXT/
 *.mid
 *.txt
 
-# Except these specific files
+# Exception on these specific files
 !midiRecord.txt
 !sheetConversion.txt
 !song.txt
+!sample.txt
+!Sample.mid
+
+__pycache__/

@@ -45,10 +45,18 @@ class MidiFile:
 	itr = 0
 	runningStatus = -1
 	tempo = 0
+
+	directory = "MIDI"
+	if not os.path.exists(directory):
+		os.makedirs(directory)
+
+	sheet_directory = "TEXT"
+	if not os.path.exists(sheet_directory):
+		os.makedirs(sheet_directory)
 	
 	midiRecord = open("midiRecord.txt","w")
 	filename = input("Enter the name you want to save it as: ")
-	midiSong = open(filename + ".txt", "w")
+	midiSong = open(os.path.join(sheet_directory, filename + ".txt"), "w")
 	midiSheet = open("sheetConversion.txt","w")
 	
 	virtualPianoScale = "1!2@34$5%6^78*9(0qQwWeErtTyYuiIoOpPasSdDfgGhHjJklLzZxcCvVbBnm"
@@ -294,18 +302,19 @@ class MidiFile:
 			return down
 		
 def main():
+	os.chdir("MIDI")
 	fileList = os.listdir()
 	midList = []
 	for f in fileList:
 		if(".mid" in f):
 			midList.append(f)
-	print("Press letter of midi file to process")
+	print("Press number of midi file to process")
 	for i in range(len(midList)):
-		print(chr(97+i),":",midList[i])
+		print(i+1, ":", midList[i])
 
-	choice = input()
-	print("Processing",midList[ord(choice)-97])
-	midi = MidiFile(midList[ord(choice)-97])
+	choice = int(input()) - 1
+	print("Processing", midList[choice])
+	midi = MidiFile(midList[choice])
 	#midi.notes = sorted(midi.notes, key=lambda x: (float(x[0]), not "tempo" in x[1]))
 	midi.notes = sorted(midi.notes, key=lambda x: float(x[0]))
 	for x in midi.notes:

@@ -1,5 +1,6 @@
 import keyboard
 import threading
+import os
 
 global isPlaying
 global infoTuple
@@ -53,7 +54,7 @@ def releaseLetter(strLetter):
 	
 def processFile(filename):
 	global playback_speed
-	with open(filename,"r") as macro_file:
+	with open(filename, "r") as macro_file:
 		lines = macro_file.read().split("\n")
 		tOffsetSet = False
 		tOffset = 0
@@ -167,8 +168,17 @@ def main():
 	global isPlaying
 	global infoTuple
 	global playback_speed
-	filename = input("Enter the name of text file you want to play: ")
-	infoTuple = processFile(filename + ".txt")
+	sheet_directory = "TEXT"
+	os.chdir(sheet_directory)
+	txtList = sorted([f for f in os.listdir() if f.endswith(".txt")])
+
+	print("Press the number of the text file you want to play:")
+	for i, filename in enumerate(txtList):
+		print(i+1, ":", filename)
+
+	choice = int(input()) - 1
+	full_path = txtList[choice]
+	infoTuple = processFile(full_path)
 	infoTuple[2] = parseInfo()
 	keyboard.on_press_key("delete", onDelPress)
 	keyboard.on_press_key("home", rewind)
